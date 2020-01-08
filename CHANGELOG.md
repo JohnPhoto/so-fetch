@@ -1,3 +1,10 @@
+# 0.5.0
+
+* Now supports async serialized interceptors.
+* Exposing all the TypeScript types.
+* client now has shorthands for all the http methods (`.get()`, `.post()`, `.put()`, `.patch()`, `.del()`).
+* Client now accepts a single `options` object with `url`. Example: `apiClient.fetch({url: '/any', ...})`.
+
 # 0.4.2
 
 * Better TypeScript types for FetchOptions - [PR](https://github.com/jackfranklin/so-fetch/pull/16)
