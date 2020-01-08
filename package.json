@@ -1,5 +1,5 @@
 {
-  "name": "so-fetch-js",
+  "name": "@nordnet/so-fetch-js",
   "version": "0.4.2",
   "description": "A nice wrapper around the fetch API with some extras",
   "main": "dist/index",

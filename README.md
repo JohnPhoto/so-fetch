@@ -1,4 +1,4 @@
-# so-fetch
+# @nordnet/so-fetch
 
 A small wrapper around the fetch API with some additional behaviours.
 
@@ -7,8 +7,8 @@ A small wrapper around the fetch API with some additional behaviours.
 Install this module with npm or yarn.
 
 ```bash
-yarn add so-fetch-js
-npm install so-fetch-js
+yarn add @nordnet/so-fetch-js
+npm install @nordnet/so-fetch-js
 ```
 
 This module is designed to be consumed via a build tool such as Webpack.
@@ -28,7 +28,7 @@ You will also need to provide your own polyfill for the `fetch` API if you're wo
 * Although your request is parsed as JSON, `so-fetch` gives you the full response back, with its headers, status, and so on. On a `SoFetchResponse` you can access the parsed response through the `.data` property:
 
   ```js
-  import fetch from 'so-fetch-js'
+  import fetch from '@nordnet/so-fetch-js'
 
   fetch('/users').then(response => {
     console.log(response.data) // the response body, parsed to a JS object
@@ -38,7 +38,7 @@ You will also need to provide your own polyfill for the `fetch` API if you're wo
 * Unlike `fetch`, `so-fetch` will reject any response that does not have a `2XX` status code. When this happens, you can still read the JSON response using `.data`:
 
   ```js
-  import fetch from 'so-fetch-js'
+  import fetch from '@nordnet/so-fetch-js'
 
   fetch('/users').catch(errorResponse => {
     console.log(errorResponse.data) // response body still, even though the request failed
@@ -50,7 +50,7 @@ You will also need to provide your own polyfill for the `fetch` API if you're wo
 You can just import and start using `so-fetch`:
 
 ```js
-import fetch from 'so-fetch-js'
+import fetch from '@nordnet/so-fetch-js'
 
 fetch('http://example.com/api').then(response => ...)
 ```
@@ -62,7 +62,7 @@ To use `so-fetch`'s more advanced features, you will need to create clients.
 To use so-fetch, you should first import it and instantiate a new client:
 
 ```js
-import { makeFetchClient } from 'so-fetch-js'
+import { makeFetchClient } from '@nordnet/so-fetch-js'
 const apiClient = makeFetchClient({
   ...
 })
@@ -175,7 +175,7 @@ The so-fetch library is fully typed and if you are using TypeScript you can take
 So, if my API always returns `{ name: string }`, I can create my client like so:
 
 ```ts
-import { makeFetchClient } from 'so-fetch-js'
+import { makeFetchClient } from '@nordnet/so-fetch-js'
 
 interface IApiResponse {
   name: string
@@ -188,7 +188,7 @@ myClient.fetch(...) // returns Promise<SoFetchResponse<IApiResponse>>
 If you don't want to create your own clients, you can still type the default fetch function:
 
 ```ts
-import fetch from 'so-fetch-js'
+import fetch from '@nordnet/so-fetch-js'
 
 interface IApiResponse {
   name: string
